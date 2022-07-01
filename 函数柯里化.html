@@ -12,6 +12,7 @@
         let argStore = args
         function add(...args1) {
           argStore = argStore.concat(args1)
+          return add
         }
         add.sumof = function () {
           return argStore.reduce((a, b) => a + b)
@@ -22,9 +23,7 @@
         return add
       }
 
-      console.log(sum(1, 2, 3, 4, 5).toString())
-
-      function test() {}
+      console.log(sum(1, 2, 3, 4, 5)(1)(1).toString())
     </script>
   </body>
 </html>
